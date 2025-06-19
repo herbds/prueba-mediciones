@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
+import logo from '../../assets/Colaboracion_logo.jpg';
+
 
 const Home = () => {
   const [equipo, setEquipo] = useState('equipoA');
@@ -44,7 +46,7 @@ const Home = () => {
 
       <div className="container">
         <div className="logo-container">
-          <img src="/assets/Colaboracion_logo.jpg" alt="Logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo" />
         </div>
         
         <h1>Plataforma monitorización</h1>
