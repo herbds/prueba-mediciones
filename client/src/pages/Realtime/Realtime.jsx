@@ -4,7 +4,7 @@ import { fetchRealtimeData } from './api/realtimeAPI';
 import { getEquipoById } from '../../config/equipment';
 import './Realtime.css';
 import HomeButton from '../../components/HomeButton/homeButton';
-import Chart from 'chart.js/auto';
+import { Chart } from "chart.js/auto";
 import 'chartjs-adapter-date-fns';
 
 const Realtime = () => {
