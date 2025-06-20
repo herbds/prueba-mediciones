@@ -1,4 +1,4 @@
-/* Mantenemos todos los estilos base y animaciones */
+/* Estilos base y animaciones */
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +20,6 @@ body {
   padding: 2rem;
 }
 
-/* Partículas (se mantienen igual) */
 .particles {
   position: fixed;
   top: 0;
@@ -38,9 +37,6 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-/* ... (todos los estilos de partículas se mantienen igual) ... */
-
-/* Contenedor principal - Adaptado */
 .realtime-container {
   width: 100%;
   max-width: 1200px;
@@ -59,7 +55,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Header - Adaptado */
 .header {
   display: flex;
   justify-content: space-between;
@@ -79,7 +74,7 @@ h1 {
   background-clip: text;
 }
 
-.status {
+.timestamp {
   background-color: rgba(25, 118, 210, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -89,48 +84,63 @@ h1 {
   border: 1px solid rgba(25, 118, 210, 0.2);
 }
 
-/* Tarjetas de estadísticas - Nuevo */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.stat-card {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1.5rem;
+.resumen {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-}
-
-.stat-card h3 {
-  color: #64748b;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.stat-card p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
   color: #1e293b;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
-/* Tabla - Se mantiene igual */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.error-message,
+.alert {
+  background-color: rgba(198, 40, 40, 0.1);
+  color: #c62828;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #c62828;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   overflow: hidden;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 th, td {
@@ -145,41 +155,46 @@ th {
   font-weight: 600;
 }
 
-/* Gráfico - Adaptado para react-chartjs-2 */
-.chart-container {
-  position: relative;
-  height: 300px;
-  width: 100%;
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  padding: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+.no-data {
+  color: #64748b;
+  font-style: italic;
+  padding: 2rem;
+  text-align: center;
 }
 
-/* Alertas - Adaptado */
-.alert {
-  background-color: rgba(198, 40, 40, 0.1);
-  color: #c62828;
-  padding: 0.8rem 1.2rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  border-left: 4px solid #c62828;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Responsive - Optimizado */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 900px) {
   .container {
     padding: 1.5rem;
   }
-  
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
+
   .chart-container {
     height: 250px;
   }
@@ -189,44 +204,23 @@ th {
   body {
     padding: 1rem;
   }
-  
+
   .container {
     padding: 1rem;
   }
-  
-  .stats {
-    grid-template-columns: 1fr;
-  }
-  
+
   .header {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .chart-container {
     height: 200px;
     padding: 0.5rem;
   }
-  
+
   th, td {
     padding: 8px;
     font-size: 0.9rem;
   }
-}
-
-/* Animaciones (se mantienen igual) */
-@keyframes float {
-  0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
 }

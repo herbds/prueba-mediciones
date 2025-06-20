@@ -176,6 +176,16 @@ select:focus {
   box-shadow: 0 12px 25px rgba(5, 150, 105, 0.4);
 }
 
+.btn-thirdary {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn-thirdary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.4);
+}
 /* Responsive */
 @media (max-width: 600px) {
   .container {

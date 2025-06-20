@@ -1,0 +1,24 @@
+/* homeButton.css */
+.home-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+  min-width: 200px;
+  background: linear-gradient(45deg, #9c27b0, #673ab7);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.home-button:hover {
+  background: linear-gradient(45deg, #7b1fa2, #5e35b1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.home-button:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,115 @@
+/* DataTable.css */
+.data-table-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  margin-bottom: 2rem;
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 15px;
+}
+
+.filter-controls input {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+  background: rgba(245, 245, 245, 0.8);
+}
+
+tr:hover {
+  background: rgba(0, 188, 212, 0.1);
+}
+
+.no-data {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination-controls button {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.column-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-controls {
+    flex-direction: column;
+  }
+  
+  .filter-controls {
+    flex-direction: column;
+  }
+  
+  th, td {
+    padding: 0.6rem;
+  }
+}

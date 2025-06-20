@@ -1,0 +1,171 @@
+.configuration-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 5px 0;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.secondary-btn {
+  background-color: #7f8c8d;
+}
+
+.secondary-btn:hover {
+  background-color: #6c7a7d;
+}
+
+select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.accuracy-display,
+.ip-info {
+  background-color: #e8f5e8;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.ip-info {
+  background-color: #e8f4f8;
+  color: #2d4a5a;
+}
+
+.method-description {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.success-message {
+  color: #27ae60;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.point-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.area-points,
+.points-list {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.area-points ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.area-points li {
+  margin-bottom: 6px;
+}
+
+.accuracy {
+  font-size: 12px;
+  color: #888;
+  margin-left: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}
+
+.coordinates {
+  font-family: monospace;
+  line-height: 1.4;
+}
+
+.method-cell small {
+  display: block;
+  font-size: 11px;
+  color: #666;
+}
+
+.inside {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.outside {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.distances {
+  font-family: monospace;
+  line-height: 1.4;
+}
+
+.info-section ul {
+  padding-left: 20px;
+}
+
+.info-section li {
+  margin-bottom: 6px;
+}
